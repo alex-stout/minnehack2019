@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './CertTable.css';
 import axios from 'axios';
+import { useReactTable } from "react-table";
 
 class CertTable extends Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class CertTable extends Component {
             console.log(JSON.stringify(items));
           });
       }
+    
 	render() {
 		return (
             <div>
