@@ -19,8 +19,20 @@ exports.addMill = (req, res) => {
         if (err) {
             return res.status(400).send(err)
         }
+        console.log('saved mill')
         res.status(200).json({
             success: true
+        })
+    })
+}
+
+exports.getMills = (req, res) => {
+    Mill.count((err, count) => {
+        Mill.find((err, users) => {
+            if (err) {
+                console.log(err)
+            }
+            res.status(200).send({ count, users })
         })
     })
 }
