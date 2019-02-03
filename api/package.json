@@ -1,26 +1,32 @@
 {
-  "name": "api",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "body-parser": "^1.18.3",
-    "cors": "^2.8.5",
-    "csvtojson": "^2.0.8",
-    "express": "^4.16.4",
-    "mongoose": "^5.4.9",
-    "mongoose-unique-validator": "^2.0.2",
-    "morgan": "^1.9.1"
-  },
-  "prettier": {
-    "tabWidth": 4,
-    "semi": false,
-    "singleQuote": true
-  }
+    "name": "api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "backend": "nodemon server.js",
+        "frontend-dashboard": "PORT=3006 npm start --prefix ../dashboard",
+        "frontend-transaction": "npm start --prefix ../transaction-frontend",
+        "dev": "concurrently \"npm run backend\" \"npm run frontend-dashboard\" \"npm run frontend-transaction\""
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.18.0",
+        "body-parser": "^1.18.3",
+        "concurrently": "^4.1.0",
+        "cors": "^2.8.5",
+        "csvtojson": "^2.0.8",
+        "express": "^4.16.4",
+        "mongoose": "^5.4.9",
+        "mongoose-unique-validator": "^2.0.2",
+        "morgan": "^1.9.1",
+        "nodemon": "^1.18.9"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "semi": false,
+        "singleQuote": true
+    }
 }
