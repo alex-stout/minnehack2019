@@ -1,42 +1,61 @@
-let mongoose = require("mongoose");
-var uniqueValidator = require("mongoose-unique-validator");
+let mongoose = require('mongoose')
+var uniqueValidator = require('mongoose-unique-validator')
 
-//Certification Schema
+//Transaction Schema
 let transactionSchema = mongoose.Schema({
-  shipmentID: {
-    type: String,
-    required: true,
-    select: true
-  },
-  timestamp: {
-    type: Date,
-    required: true,
-    select: true
-  },
-  giverID: {
-    type: String,
-    required: true,
-    select: true
-  },
-  receiverID: {
-    type: String,
-    required: true,
-    select: true
-  },
-  locationID: {
-    type: String,
-    required: true,
-    select: true
-  },
-  weight: {
-    trpe: Number,
-    required: true,
-    select: true
-  }
-});
+    shipmentID: {
+        type: Number,
+        required: true,
+        select: true
+    },
+    sellerID: {
+        type: String,
+        required: true,
+        select: true
+    },
+    buyerID: {
+        type: String,
+        required: true,
+        select: true
+    },
+    country: {
+        type: String,
+        required: true,
+        select: true
+    },
+    state: {
+        type: String,
+        required: true
+    },
+    city: {
+        type: String,
+        required: true
+    },
+    peroxideVal: {
+        type: Number,
+        required: true
+    },
+    fattyAcidVal: {
+        type: Number,
+        required: true
+    },
+    impurities: {
+        type: Number,
+        required: true
+    },
+    bleachIndex: {
+        type: Number,
+        required: true
+    },
+    timestamp: {
+        type: Date,
+        required: true,
+        select: true
+    }
+})
 
-certificationSchema.plugin(uniqueValidator);
-let Certification = (module.exports = mongoose.model(
-  "Certification",
-  certificationSchema
-));
+transactionSchema.plugin(uniqueValidator)
+let Transaction = (module.exports = mongoose.model(
+    'Transaction',
+    transactionSchema
+))

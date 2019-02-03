@@ -6,6 +6,7 @@ const cors = require('cors')
 
 const utilityRoutes = require('./routes/utility')
 const certificationRoutes = require('./routes/certification')
+const transactionRoutes = require('./routes/transaction')
 
 mongoose
     .connect(
@@ -39,6 +40,7 @@ app.use(bodyParser.json())
 
 utilityRoutes(app)
 certificationRoutes(app)
+transactionRoutes(app)
 
 app.use('/', (req, res) => {
     res.status(200).send({ message: 'Welcome' })

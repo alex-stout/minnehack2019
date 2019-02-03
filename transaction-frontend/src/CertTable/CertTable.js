@@ -3,6 +3,7 @@ import "./CertTable.css";
 import axios from "axios";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
+import { Container } from "reactstrap";
 
 class CertTable extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class CertTable extends Component {
     axios.get(`http://localhost:9000/mill`).then(res => {
       const items = res.data.users.map(obj => obj);
       this.setState({ items });
-      console.log(JSON.stringify(items));
+      console.log(JSON.stringify(items[0], null, 2));
     });
   }
 
@@ -27,7 +28,7 @@ class CertTable extends Component {
       },
       {
         Header: "Parent Company",
-        accessor: "parentCompany"
+        accessor: "parentCompanyName"
       },
       {
         Header: "State/Province",
@@ -47,17 +48,43 @@ class CertTable extends Component {
       },
       {
         Header: "Rating",
-        accessor: "rating"
+        accessor: "rating",
+        Cell: row => (
+          <span>
+            <span
+              style={{
+                color:
+                  row.value === "A"
+                    ? "#00FF00"
+                    : row.value === "B"
+                    ? "#7FFF00"
+                    : row.value === "C"
+                    ? "#FFFF00"
+                    : row.value === "D"
+                    ? "#FFFF00"
+                    : row.value === "F"
+                    ? "#FF0000"
+                    : "#57d500",
+                transition: "all .3s ease"
+              }}
+            >
+              &#x25cf;
+            </span>{" "}
+            {row.value}
+          </span>
+        )
       }
     ];
 
     return (
       <div>
-        <h2 className="text-center">Company Certifications</h2>
+        <h1 className="text-center">Palm Oil Mills</h1>
         <p className="text-center">
           Below are the companies that have been reviewed by our committee.
         </p>
-        <ReactTable data={this.state.items} columns={columns} />
+        <div style={{ width: "90%", margin: "0 auto" }}>
+          <ReactTable data={this.state.items} columns={columns} />
+        </div>
       </div>
     );
   }

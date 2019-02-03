@@ -5,6 +5,7 @@ import TransactionForm from "./TransactionForm/TransactionForm";
 import TransactionConfirm from "./TransactionConfirm/TransactionConfirm";
 import CertTable from "./CertTable/CertTable";
 import RatingForm from "./RatingForm/RatingForm";
+import TransactionTable from "./TransactionTable";
 
 class Routes extends Component {
   render() {
@@ -14,6 +15,7 @@ class Routes extends Component {
         <Route path="/rate" exact component={RatingForm} />
         <Route path="/transaction" exact component={TransactionForm} />
         <Route path="/transactionConfirm" component={TransactionConfirm} />
+        <Route path="/transactionOverview" component={TransactionTable} />
       </Switch>
     );
   }
