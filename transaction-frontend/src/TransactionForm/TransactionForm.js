@@ -1,84 +1,93 @@
 import React, { Component } from 'react';
-import QRPopup from './QRPopup';
+import QRCode from 'qrcode.react';
 import './TransactionForm.css';
 
 class TransactionForm extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { isOpen: false };
+		this.state = {
+			code: false,
+			form: true,
+			url: ""
+		};
 	}
 
-	openPopup = () => {
+	handleSubmit = (e) => {
+		e.preventDefault();
+		console.log(e.target[0].value);
+		var urlStr = window.location.href + "Confirm" +
+			"?shipment" + "=" + e.target[0].value + "?giver=" + e.target[1].value +
+			"?receiver=" + e.target[2].value + "?country=" + e.target[3].value +
+			"?state=" + e.target[4].value + "?city=" + e.target[5].value +
+			"?peroxide=" + e.target[6].value + "?ffa=" + e.target[7].value +
+			"?impurities=" + e.target[8].value + "?dobi=" + e.target[9].value;
 		this.setState({
-			isOpen: true
+			code: true,
+			form: false,
+			url: urlStr
 		});
-	}
-
-	closePopup = () => {
-		this.setState({
-			isOpen: false
-		});
+		console.log(urlStr);
 	}
 
 	render() {
 		return (
-			<div>
-				<form >
+			<div className="form">
+				<h2>Transaction Form</h2>
+				<p>
+					To initiate a transaction, please fill out the following form.
+					When complete, click submit to create the QR code required to
+					verify the form entries.
+				</p>
+				{this.state.form ? <form type="get" onSubmit={this.handleSubmit}>
 					<table>
-						<tr>
-							<td>Shipment ID:</td>
-							<td><input type="text" name="shipment"></input></td>
-						</tr><br />
-						<tr>
-							<td>Giver ID:</td>
-							<td><input type="text" name="giver"></input></td>
-						</tr><br />
-						<tr>
-							<td>Receiver ID:</td>
-							<td><input type="text" name="receiver"></input></td>
-						</tr><br />
-						<tr>
-							<td>Country:</td>
-							<td><input type="text" name="country"></input></td>
-						</tr><br />
-						<tr>
-							<td>State:</td>
-							<td><input type="text" name="state"></input></td>
-						</tr><br />
-						<tr>
-							<td>City:</td>
-							<td><input type="text" name="city"></input></td>
-						</tr><br />
-						<tr>
-							<td>Peroxide Value:</td>
-							<td><input type="text" name="peroxide"></input></td>
-						</tr><br />
-						<tr>
-							<td>Free Fatty Acid Value:</td>
-							<td><input type="text" name="ffa"></input></td>
-						</tr><br />
-						<tr>
-							<td>Moisture and Impurities Value:</td>
-							<td><input type="text" name="impurities"></input></td>
-						</tr><br />
-						<tr>
-							<td>Deterioration of Bleachability Index (DOBI) Value:</td>
-							<td><input type="text" name="dobi"></input></td>
-						</tr><br />
-						<tr>
-							<td></td>
-							<td>
-								<button onClick={this.openPopup}>Submit</button>
-								<button type="reset">Reset</button>
-							</td>
-						</tr><br />
+						<tbody>
+							<tr>
+								<td className="label">Shipment ID:</td>
+								<td><input type="text" name="shipment"></input></td>
+							</tr>
+							<tr>
+								<td className="label">Giver ID:</td>
+								<td><input type="text" name="giver"></input></td>
+							</tr>
+							<tr>
+								<td className="label">Receiver ID:</td>
+								<td><input type="text" name="receiver"></input></td>
+							</tr>
+							<tr>
+								<td className="label">Country:</td>
+								<td><input type="text" name="country"></input></td>
+							</tr>
+							<tr>
+								<td className="label">State:</td>
+								<td><input type="text" name="state"></input></td>
+							</tr>
+							<tr>
+								<td className="label">City:</td>
+								<td><input type="text" name="city"></input></td>
+							</tr>
+							<tr>
+								<td className="label">Peroxide Value:</td>
+								<td><input type="text" name="peroxide"></input></td>
+							</tr>
+							<tr>
+								<td className="label">Free Fatty Acid Value:</td>
+								<td><input type="text" name="ffa"></input></td>
+							</tr>
+							<tr>
+								<td className="label">Moisture and Impurities Value:</td>
+								<td><input type="text" name="impurities"></input></td>
+							</tr>
+							<tr>
+								<td className="label">Deterioration of Bleachability Index Value:</td>
+								<td><input type="text" name="dobi"></input></td>
+							</tr>
+						</tbody>
 					</table>
-				</form >
-				<QRPopup show={this.state.isOpen}
-					onClose={this.closePopup}>
-					Hi
-				</QRPopup>
+					<button className="submit" type="submit">Submit</button>
+					<button type="reset">Reset</button>
+				</form > : null}
+				{this.state.code ? <QRCode value={this.state.url} /> : null}
 			</div >
 
 		);
