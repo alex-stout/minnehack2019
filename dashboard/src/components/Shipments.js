@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, Row, FormGroup, Input, Label } from "reactstrap";
+import axios from "axios";
 
 class Shipments extends Component {
   constructor(props) {
@@ -19,16 +20,15 @@ class Shipments extends Component {
   };
 
   searchShipments = shipmentID => {
-    fetch(
-      "http://localhost:3000/shipments?shipmentID=" + this.state.shipmentID,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({})
-      }
-    );
+    axios
+      .get(
+        `http://localhost:9000/shipments?shipmentID=` + this.state.shipmentID
+      )
+      .then(res => {
+        const items = res.data.users.map(obj => obj);
+        this.setState({ items });
+        console.log(JSON.stringify(items));
+      });
   };
 
   render() {
