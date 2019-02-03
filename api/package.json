@@ -8,7 +8,11 @@
         "backend": "nodemon server.js",
         "frontend-dashboard": "PORT=3006 npm start --prefix ../dashboard",
         "frontend-transaction": "npm start --prefix ../transaction-frontend",
-        "dev": "concurrently \"npm run backend\" \"npm run frontend-dashboard\" \"npm run frontend-transaction\""
+        "backend-install": "npm install",
+        "frontend-dashboard-install": "npm install --prefix ../dashboard",
+        "frontend-transaction-install": "npm install --prefix ../transaction-frontend",
+        "dev": "concurrently \"npm run backend\" \"npm run frontend-dashboard\" \"npm run frontend-transaction\"",
+        "dev-install": "concurrently \"npm run backend-install\" \"npm run frontend-dashboard-install\" \"npm run frontend-transaction-install\""
     },
     "author": "",
     "license": "ISC",
