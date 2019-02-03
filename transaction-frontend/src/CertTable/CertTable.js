@@ -21,7 +21,7 @@ class CertTable extends Component {
 		return (
             <div>
                 <h2 className="text-center">Company Certifications</h2>
-                <p className="text-center">Below are the plantations that have been reviewed by our committee.</p>
+                <p className="text-center">Below are the companies that have been reviewed by our committee.</p>
                 <table id="CertTable" className="table-striped">
                     <thead>
                     <tr>
