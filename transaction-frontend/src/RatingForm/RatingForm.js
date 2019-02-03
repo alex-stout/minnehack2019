@@ -14,35 +14,35 @@ class RatingForm extends Component {
 			submitSuccess: false
 		};
 	}
-	  handleSubmit = event => {
-		event.preventDefault();
-		this.rateCompany();
-	  };
+	handleSubmit = (e) => {
+		e.preventDefault();
+		this.rateCompany(e);
+	};
 
-	rateCompany() {
+	rateCompany(e) {
 		fetch("http://localhost:9000/certification", {
-		  method: "POST",
-		  headers: {
-			"Content-Type": "application/json"
-		  },
-		  body: JSON.stringify({
-			millName: this.state.millName,
-			millGPSCoord: this.state.millGPSCoord,
-			RSPOCertified: this.state.RSPOCertified,
-			outReachPrograms: this.state.outReachPrograms,
-			responsibilitySourcingPolicy: this.state.responsibilitySourcingPolicy,
-		  	noDeforestStationPolicy: this.state.noDeforestStationPolicy,
-		  })
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify({
+				millName: e.target[0].value,
+				millGPSCoord: e.target[1].value,
+				RSPOCertified: e.target[2].value,
+				outReachPrograms: e.target[3].value,
+				responsibilitySourcingPolicy: e.target[4].value,
+				noDeforestStationPolicy: e.target[5].value
+			})
 		})
-		  .then(res => res.json())
-		  .then(data => {
-			if (data.millName) {
-				this.setState({ submitSuccess: true });
-			}else{
-				this.setState({ submitSuccess: false });
-			}
-		  });
-	  }
+			.then(res => res.json())
+			.then(data => {
+				if (data.millName) {
+					this.setState({ submitSuccess: true });
+				} else {
+					this.setState({ submitSuccess: false });
+				}
+			});
+	}
 	render() {
 		return (
 			<div className="form">

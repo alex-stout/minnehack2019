@@ -14,10 +14,10 @@ class RatingForm extends Component {
 			<div className="form">
 				<h2>Global Palm Oil Sustainability and Supply Chain Transparancy</h2>
 				<div className="links">
+					<Link to="/">Home</Link><br />
 					<Link to="/certification">Mill Certification Scores</Link><br />
 					<Link to="/rate">Add a Mill Rating</Link><br />
 					<Link to="/transaction">Start a Transaction</Link><br />
-					<Link to="/rate">Add a Mill Rating</Link><br />
 				</div>
 				<p>
 					Description Here
