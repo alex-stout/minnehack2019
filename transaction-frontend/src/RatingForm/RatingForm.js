@@ -6,7 +6,8 @@ class RatingForm extends Component {
 		super(props);
 		this.state = {
 			millName: "",
-			millGPSCoord: "",
+			millLatitude: "",
+			millLongitude: "",
 			RSPOCertified: "",
 			outReachPrograms: "",
 			responsibilitySourcingPolicy: "",
@@ -99,10 +100,6 @@ class RatingForm extends Component {
 							<br />Include Policy Here:<br />
 								<input type="text" name="deforestationPolicyText"></input>
 							</td>
-						</tr>
-						<tr>
-							<td className="label">Average Employee Wage (USD):</td>
-							<td><input type="text" name="averageWage" placeholder="8.00"></input></td>
 						</tr>
 					</table>
 					<button className="submit button" type="submit">Submit</button>

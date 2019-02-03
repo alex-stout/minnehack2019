@@ -8,7 +8,12 @@ let certificationSchema = mongoose.Schema({
     required: true,
     select: true
   },
-  millGPSCoord: {
+  millLatitude: {
+    type: String,
+    required: true,
+    select: true
+  },
+  millLongitude: {
     type: String,
     required: true,
     select: true
