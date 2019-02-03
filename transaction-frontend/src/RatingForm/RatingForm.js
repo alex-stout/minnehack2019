@@ -12,7 +12,7 @@ class RatingForm extends Component {
 					</tr><br />
 					<tr>
 						<td>Mill GPS Coordinates:</td>
-						<td></td>
+						<td><input type="text" name="coordinates"></input></td>
 					</tr><br />
 					<tr>
 						<td>Roundtable on Sustainable Palm Oil (RSPO) Certification?</td>
