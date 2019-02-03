@@ -1,4 +1,4 @@
-No.,Parent Company Name,Mill Name,Country,State/Province,Latitude,Longitude
+number,parentCompanyName,millName,country,stateOrProvince,latitude,longitude
 1,Anson Oil Industries,Anson Oil,Malaysia,Perak,3.95556,101.199
 2,Eng Thye Plantations,Eng Hong,Malaysia,Selangor,2.859843,101.474397
 3,Eng Thye Plantations,Jugra,Malaysia,Selangor,2.8456,101.4677
@@ -1467,7 +1467,6 @@ Guinea",Oro,-8.743386,148.198705
 1430,Kuala Mas,Sintong Abadi,Indonesia,Sumatera Utara,2.9239,99.707367
 1431,Sago Nauli,Sinunukan,Indonesia,Sumatera Utara,0.469889,99.223389
 1432,Risjadson,Sisirau,Indonesia,Aceh,4.20357,98.06422
-"Sarawak Plantation Agriculture
 1433 Development",,SPAD (Niah),Malaysia,Sarawak,3.874177,113.861357
 1434 SPO Agro-Industries Co,,SPO Agro-Industries,Thailand,Surat Thani,8.518397,99.226798
 1435 PPB Oil Palms,,Sri Kamusan,Malaysia,Sabah,6.203802,117.291189,
@@ -1477,9 +1476,8 @@ Guinea",Oro,-8.743386,148.198705
 1439,Incasi Raya,Sumatera Jaya Agro Lestari (Silaut),Indonesia,Sumatera Barat,-2.330883,100.995267
 1440,Sumber Makmur Jaya,Sumber Kembang Jaya,Indonesia,Sumatera Utara,3.765817,98.407367
 1441,Sumber Makmur Jaya,Sumber Makmur Jaya,Indonesia,Sumatera Utara,4.033367,98.301517
-1442 New Britain Palm Oil,,Sumberipa,"Papua New
-Guinea",Oro,-8.85467,147.7069
-1443 Kim Loong Resources,,Sungkit Enterprise,Malaysia,Johor,1.783273,103.940663
+1442, New Britain Palm Oil,,Sumberipa,"Papua New Guinea",Oro,-8.85467,147.7069
+1443, Kim Loong Resources,,Sungkit Enterprise,Malaysia,Johor,1.783273,103.940663
 1444,Eagle High Plantations,Bumilanggeng Perdanatrada (Batu Bulan),Indonesia,Kalimantan Selatan,-3.337111,115.771
 1445,Astra Agro Lestari,Suryaraya Lestari 1,Indonesia,Sulawesi Barat,-1.69379,119.36168
 1446,Astra Agro Lestari,Suryaraya Lestari 2,Indonesia,Sulawesi Barat,-2.273617,119.425533
@@ -1502,16 +1500,15 @@ Tsachilas",-0.049028,-79.348528
 1462,Glenealy Plantations,Timor Enterprise (Lana),Malaysia,Sarawak,2.515615,113.38449
 1463,Surya Dumai,Tirta Madu Sawit Jaya,Indonesia,Kalimantan Timur,4.114175,117.040539
 1464,Univanich Palm Oil,Topi,Thailand,Surat Thani,8.578792,98.920751
-1465 Toupos Palm Oil Mill,,Toupos Palm Oil Mill,Malaysia,Sabah,5.660384,116.879974,
-1466 Wilmar International,,Tritunggal Sentra Buana (Salo Bandang),Indonesia,Kalimantan Timur,-0.417583,117.3645
-"Tian Siang Holding / Wilmar
-1467 International",,TSH Wilmar,Malaysia,Sabah,4.686058,118.242367
-1468 Tung Guan Oil Mill,,Tung Guan,Malaysia,Johor,1.647115,103.268899
-1469 PP London Sumatra Indonesia,,Turangie,Indonesia,Sumatera Utara,3.478083,98.267944
-1470 Umada Group,,Umada,Indonesia,Sumatera Utara,2.23425,99.789117
-1471 Felda Global Ventures,,Umas,Malaysia,Sabah,4.496906,117.650576
-1472 IOI Corporation,,Unico-Desa,Malaysia,Sabah,5.414067,118.528122
-1473 Vee Seng Development,,Veetar,Malaysia,Sabah,5.336601,116.94324
+1465, Toupos Palm Oil Mill,,Toupos Palm Oil Mill,Malaysia,Sabah,5.660384,116.879974,
+1466, Wilmar International,,Tritunggal Sentra Buana (Salo Bandang),Indonesia,Kalimantan Timur,-0.417583,117.3645
+1467, International",,TSH Wilmar,Malaysia,Sabah,4.686058,118.242367
+1468, Tung Guan Oil Mill,,Tung Guan,Malaysia,Johor,1.647115,103.268899
+1469, PP London Sumatra Indonesia,,Turangie,Indonesia,Sumatera Utara,3.478083,98.267944
+1470, Umada Group,,Umada,Indonesia,Sumatera Utara,2.23425,99.789117
+1471, Felda Global Ventures,,Umas,Malaysia,Sabah,4.496906,117.650576
+1472, IOI Corporation,,Unico-Desa,Malaysia,Sabah,5.414067,118.528122
+1473, Vee Seng Development,,Veetar,Malaysia,Sabah,5.336601,116.94324
 1474,New Britain Palm Oil,Waraston,"Papua New
 Guinea",West New Britain,-5.4857,150.08534
 1475,Agro Mandiri Semesta,Wawasan Kebun Nusantara,Indonesia,Kalimantan Barat,1.266894,109.817129
@@ -1656,7 +1653,7 @@ Development",SPAD (Mukah),Malaysia,Sarawak,2.650825,112.330089
 1613,Kebun Mandiri Sejahtera,Mariango,Indonesia,Kalimantan Timur,-1.280942,116.636988
 1614,Perkebunan Nusantara VII,Bekri,Indonesia,Lampung,-5.0742,105.1347
 1615,NPC Resources,Nala Palma Cadudasa,Indonesia,Kalimantan Timur,0.278889,116.844444
-1616 Tri Bakti Sarimas,,Desa Koto Cengar,Indonesia,Riau,-0.686293,101.490875
+1616, Tri Bakti Sarimas,,Desa Koto Cengar,Indonesia,Riau,-0.686293,101.490875
 1617,Agricola Alzamora Cordovez Cia,Teobroma,Ecuador,"Santo Domingo de los
 Tsachilas",-0.046694444,-79.35213889
 1618,CI Biocosta,Gradesa (Grasas Y Derivados),Colombia,Magdalena,11.003072,-74.219033
