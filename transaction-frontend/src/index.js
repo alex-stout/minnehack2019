@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import RatingForm from './RatingForm/RatingForm';
+import TransactionForm from './TransactionForm/TransactionForm';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<RatingForm />, document.getElementById('root'));
+ReactDOM.render(<TransactionForm />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
