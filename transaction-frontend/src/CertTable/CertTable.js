@@ -23,7 +23,8 @@ class CertTable extends Component {
         return (
             <div>
                 <h2 className="text-center">Company Certifications</h2>
-                <p className="text-center">Below are the companies that have been reviewed by our committee.</p>
+                <p className="text-center">Below you can find the companies that have been documented in our system
+                along with their sustainability rating score.</p>
                 <table id="CertTable" className="table-striped">
                     <thead>
                         <tr>

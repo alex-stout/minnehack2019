@@ -22,32 +22,38 @@ class TransactionConfirm extends Component {
 	}
 
 	postTransaction = () => {
-		// fetch("http://localhost:9000/", { //TODO
-		// 	method: "POST",
-		// 	headers: {
-		// 		"Content-Type": "application/json"
-		// 	},
-		// 	body: JSON.stringify({
-		// 		shipmentId: this.state.shipment,
-		// 		//timestamp: , //TODO
-		// 		giverID: this.state.giver,
-		// 		reciverID: this.state.receiver,
-		// 		locationID: this.state.location
+		fetch("http://localhost:9000/certification", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify({
+				shipmentId: this.state.shipment,
+				timestamp: new Date(),
+				giverID: this.state.giver,
+				reciverID: this.state.receiver,
+				locationID: this.state.location,
 
-		// 		//TODO
-		// 	})
-		// })
-		// 	.then(res => res.json())
-		// 	.then(data => {
-		// 		if (!data.success) {
-		// 			this.setState({
-		// 				formValid: false,
-		// 				message: "This email has already been taken."
-		// 			});
-		// 		} else {
-		// 			this.setState({ submitSuccess: true });
-		// 		}
-		// 	});
+				// country: this.state.country,
+				// state: this.state.state,
+				// city: this.state.city,
+				// peroxide: this.state.peroxide,
+				// ffa: this.state.ffa,
+				// impurities: this.state.impurities,
+				// dobi: this.state.dobi
+			})
+		})
+			.then(res => res.json())
+			.then(data => {
+				if (!data.success) {
+					this.setState({
+						formValid: false,
+						message: "This email has already been taken."
+					});
+				} else {
+					this.setState({ submitSuccess: true });
+				}
+			});
 	}
 
 	render() {
