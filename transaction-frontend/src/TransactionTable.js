@@ -3,6 +3,7 @@ import axios from "axios";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import { Container } from "reactstrap";
+import AppNavbar from "./AppNavbar";
 
 class TransactionTable extends Component {
   constructor(props) {
@@ -34,14 +35,6 @@ class TransactionTable extends Component {
         accessor: "buyerID"
       },
       {
-        Header: "City",
-        accessor: "city"
-      },
-      {
-        Header: "State",
-        accessor: "state"
-      },
-      {
         Header: "Country",
         accessor: "country"
       },
@@ -69,9 +62,10 @@ class TransactionTable extends Component {
 
     return (
       <div>
-        <h1 className="text-center">Palm Oil Mills</h1>
+        <AppNavbar />
+        <h1 className="text-center">Palm Oil Supply Chain Transactions</h1>
         <p className="text-center">
-          Below are the companies that have been reviewed by our committee.
+          Complete log of transactions of palm oil throughout the world.
         </p>
         <div style={{ width: "90%", margin: "0 auto" }}>
           <ReactTable data={this.state.items} columns={columns} />

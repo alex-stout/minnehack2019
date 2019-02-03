@@ -4,6 +4,8 @@ import axios from "axios";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import { Container } from "reactstrap";
+import AppNavbar from "../AppNavbar";
+import App from "../App";
 
 class CertTable extends Component {
   constructor(props) {
@@ -47,7 +49,7 @@ class CertTable extends Component {
         accessor: "longitude"
       },
       {
-        Header: "Rating",
+        Header: "Average Farmer Rating",
         accessor: "rating",
         Cell: row => (
           <span>
@@ -78,6 +80,7 @@ class CertTable extends Component {
 
     return (
       <div>
+        <AppNavbar />
         <h1 className="text-center">Palm Oil Mills</h1>
         <p className="text-center">
           Below are the companies that have been reviewed by our committee.
