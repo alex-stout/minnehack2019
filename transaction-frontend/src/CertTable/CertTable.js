@@ -1,58 +1,49 @@
 import React, { Component } from 'react';
 import './CertTable.css';
+import axios from 'axios';
 
 class CertTable extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          items:[{"Name" : "Rachel's Plantation", "Location" : "USA", "Rating" : "Gold"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},{"Name" : "Rachel's Plantation", "Location" : "USA", "Rating" : "Gold"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},{"Name" : "Rachel's Plantation", "Location" : "USA", "Rating" : "Gold"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},{"Name" : "Rachel's Plantation", "Location" : "USA", "Rating" : "Gold"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},{"Name" : "Rachel's Plantation", "Location" : "USA", "Rating" : "Gold"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},{"Name" : "Rachel's Plantation", "Location" : "USA", "Rating" : "Gold"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},{"Name" : "Rachel's Plantation", "Location" : "USA", "Rating" : "Gold"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"},
-          {"Name" : "Taylor's Plantation", "Location" : "Mexico", "Rating" : "Silver"}]
+          items:[]
         }
+      }
+      componentDidMount() {
+        axios.get(`http://localhost:9000/mill`)
+          .then(res => {
+            const items = res.data.users.map(obj => obj);
+            this.setState({ items });
+            console.log(JSON.stringify(items));
+          });
       }
 	render() {
 		return (
             <div>
-                <h2 class="text-center">Plantation Certifications</h2>
-                <p class="text-center">Below are the plantations that have been reviewed by our committee.</p>
-                <table id="CertTable" class="table-striped">
+                <h2 className="text-center">Company Certifications</h2>
+                <p className="text-center">Below are the plantations that have been reviewed by our committee.</p>
+                <table id="CertTable" className="table-striped">
                     <thead>
-                        <th>Name</th>
-                        <th>Location</th>
+                    <tr>
+                        <th>Parent Company</th>
+                        <th>Mill Name</th>
+                        <th>State or Province</th>
+                        <th>Country</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
                         <th>Rating</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        {this.state.items.map(item => 
+                    {this.state.items.map(item => 
                             <tr>
-                                <td>{item.Name}</td>
-                                <td>{item.Location}</td>
-                                <td>{item.Rating}</td>
+                                <td>{item.parentCompanyName}</td>
+                                <td>{item.millName}</td>
+                                <td>{item.stateOrProvince}</td>
+                                <td>{item.country}</td>
+                                <td>{item.latitude}</td>
+                                <td>{item.longitude}</td>
+                                <td>Gold</td>
                             </tr>
                             
                         )}
