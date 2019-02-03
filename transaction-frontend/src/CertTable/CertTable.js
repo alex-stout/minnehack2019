@@ -7,37 +7,37 @@ class CertTable extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          items:[]
+            items: []
         }
-      }
-      componentDidMount() {
+    }
+    componentDidMount() {
         axios.get(`http://localhost:9000/mill`)
-          .then(res => {
-            const items = res.data.users.map(obj => obj);
-            this.setState({ items });
-            console.log(JSON.stringify(items));
-          });
-      }
-    
-	render() {
-		return (
+            .then(res => {
+                const items = res.data.users.map(obj => obj);
+                this.setState({ items });
+                console.log(JSON.stringify(items));
+            });
+    }
+
+    render() {
+        return (
             <div>
                 <h2 className="text-center">Company Certifications</h2>
                 <p className="text-center">Below are the companies that have been reviewed by our committee.</p>
                 <table id="CertTable" className="table-striped">
                     <thead>
-                    <tr>
-                        <th>Parent Company</th>
-                        <th>Mill Name</th>
-                        <th>State or Province</th>
-                        <th>Country</th>
-                        <th>Latitude</th>
-                        <th>Longitude</th>
-                        <th>Rating</th>
-                    </tr>
+                        <tr>
+                            <th>Parent Company</th>
+                            <th>Mill Name</th>
+                            <th>State or Province</th>
+                            <th>Country</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Rating</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    {this.state.items.map(item => 
+                        {this.state.items.map(item =>
                             <tr>
                                 <td>{item.parentCompanyName}</td>
                                 <td>{item.millName}</td>
@@ -47,14 +47,14 @@ class CertTable extends Component {
                                 <td>{item.longitude}</td>
                                 <td>Gold</td>
                             </tr>
-                            
+
                         )}
                     </tbody>
                 </table>
             </div>
 
-		);
-	}
+        );
+    }
 }
 
 export default CertTable;
