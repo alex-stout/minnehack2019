@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './CertTable.css';
 import axios from 'axios';
-import { useReactTable } from "react-table";
 
 class CertTable extends Component {
     constructor(props) {
@@ -15,7 +14,15 @@ class CertTable extends Component {
             .then(res => {
                 const items = res.data.users.map(obj => obj);
                 this.setState({ items });
-                console.log(JSON.stringify(items));
+                //console.log(JSON.stringify(items));
+                items.map(item =>
+                    //console.log(item)
+                    item.rating = "A"
+                );
+                this.setState({ items });
+                console.log()
+                //Todo: look up by mil name in cert model to get the info for rating
+                //Calculate and store rating in state for each item
             });
     }
 
@@ -46,7 +53,7 @@ class CertTable extends Component {
                                 <td>{item.country}</td>
                                 <td>{item.latitude}</td>
                                 <td>{item.longitude}</td>
-                                <td>Gold</td>
+                                <td>{item.rating}</td>
                             </tr>
 
                         )}
