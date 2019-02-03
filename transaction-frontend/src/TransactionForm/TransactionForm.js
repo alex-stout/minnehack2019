@@ -19,10 +19,33 @@ class TransactionForm extends Component {
 						<td><input type="text" name="receiver"></input></td>
 					</tr><br />
 					<tr>
-						<td>Location:</td>
-						<td><input type="text" name="location"></input></td>
+						<td>Country:</td>
+						<td><input type="text" name="country"></input></td>
 					</tr><br />
-
+					<tr>
+						<td>State:</td>
+						<td><input type="text" name="state"></input></td>
+					</tr><br />
+					<tr>
+						<td>City:</td>
+						<td><input type="text" name="city"></input></td>
+					</tr><br />
+					<tr>
+						<td>Peroxide Value:</td>
+						<td><input type="text" name="peroxide"></input></td>
+					</tr><br />
+					<tr>
+						<td>Free Fatty Acid Value:</td>
+						<td><input type="text" name="ffa"></input></td>
+					</tr><br />
+					<tr>
+						<td>Moisture and Impurities Value:</td>
+						<td><input type="text" name="impurities"></input></td>
+					</tr><br />
+					<tr>
+						<td>Deterioration of Bleachability Index (DOBI) Value:</td>
+						<td><input type="text" name="dobi"></input></td>
+					</tr><br />
 					<tr>
 						<td></td>
 						<td>
