@@ -8,11 +8,14 @@ const utilityRoutes = require('./routes/utility')
 const certificationRoutes = require('./routes/certification')
 
 mongoose
-    .connect('mongodb://localhost:27017/minnehack', {
-        user: 'prototype',
-        pass: 'password123',
-        useNewUrlParser: true
-    })
+    .connect(
+        'mongodb://ec2-52-15-253-69.us-east-2.compute.amazonaws.com/minnehack',
+        {
+            user: 'prototype',
+            pass: 'password123',
+            useNewUrlParser: true
+        }
+    )
     .then(() => {
         console.log('connected to db')
     })
