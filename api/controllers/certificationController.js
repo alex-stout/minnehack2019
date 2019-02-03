@@ -5,6 +5,7 @@ mongoose.model('Certification')
 
 exports.addCertification = (req, res) => {
     console.log(req.body)
+
     var newCertification = new Certification({
         ...req.body
     })

@@ -12,3 +12,12 @@ services:
       - MONGODB_PASSWORD=password123
       - MONGODB_DATABASE=minnehack
       - MONGODB_EXTRA_FLAGS=--quiet
+  # api:
+  #   image: minnehack/api
+  #   container_name: transaction-api
+  #   build:
+  #     context: ./api
+  #   volumes:
+  #     - ./api:/user
+  #   ports:
+  #     - "9000:9000"
