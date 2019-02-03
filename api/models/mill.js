@@ -37,6 +37,11 @@ let millSchema = mongoose.Schema({
         type: String,
         required: true,
         select: true
+    },
+    rating: {
+        type: String,
+        required: false,
+        select: true
     }
 })
 millSchema.plugin(uniqueValidator)

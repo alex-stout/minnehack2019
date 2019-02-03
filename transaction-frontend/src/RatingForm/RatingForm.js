@@ -6,8 +6,7 @@ class RatingForm extends Component {
 		super(props);
 		this.state = {
 			millName: "",
-			millLatitude: "",
-			millLongitude: "",
+			millGPSCoord: "",
 			RSPOCertified: "",
 			outReachPrograms: "",
 			responsibilitySourcingPolicy: "",
@@ -15,35 +14,35 @@ class RatingForm extends Component {
 			submitSuccess: false
 		};
 	}
-	//   handleSubmit = event => {
-	// 	event.preventDefault();
-	// 	this.rateCompany();
-	//   };
+	  handleSubmit = event => {
+		event.preventDefault();
+		this.rateCompany();
+	  };
 
-	// rateCompany() {
-	// 	fetch("localhost:9000/mills", {
-	// 	  method: "POST",
-	// 	  headers: {
-	// 		"Content-Type": "application/json"
-	// 	  },
-	// 	  body: JSON.stringify({
-	// 		millName: this.state.millName,
-	// 		millGPSCoord: this.state.millGPSCoord,
-	// 		RSPOCertified: this.state.RSPOCertified,
-	// 		outReachPrograms: this.state.outReachPrograms,
-	// 		responsibilitySourcingPolicy: this.state.responsibilitySourcingPolicy,
-	// 	  	noDeforestStationPolicy: this.state.noDeforestStationPolicy,
-	// 	  })
-	// 	})
-	// 	  .then(res => res.json())
-	// 	  .then(data => {
-	// 		if (data.millName) {
-	// 			this.setState({ submitSuccess: true });
-	// 		}else{
-	// 			this.setState({ submitSuccess: false });
-	// 		}
-	// 	  });
-	//   }
+	rateCompany() {
+		fetch("http://localhost:9000/certification", {
+		  method: "POST",
+		  headers: {
+			"Content-Type": "application/json"
+		  },
+		  body: JSON.stringify({
+			millName: this.state.millName,
+			millGPSCoord: this.state.millGPSCoord,
+			RSPOCertified: this.state.RSPOCertified,
+			outReachPrograms: this.state.outReachPrograms,
+			responsibilitySourcingPolicy: this.state.responsibilitySourcingPolicy,
+		  	noDeforestStationPolicy: this.state.noDeforestStationPolicy,
+		  })
+		})
+		  .then(res => res.json())
+		  .then(data => {
+			if (data.millName) {
+				this.setState({ submitSuccess: true });
+			}else{
+				this.setState({ submitSuccess: false });
+			}
+		  });
+	  }
 	render() {
 		return (
 			<div className="form">
