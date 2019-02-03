@@ -13,18 +13,20 @@ p {
 table {
 	margin-left: auto;
 	margin-right: auto;
-	padding-right: 90px;
+	padding-right: 50px;
 }
 
 td {
 	padding-top: 10px;
 	padding-bottom: 10px;
+	min-width: 130px;
+	text-align: left;
 }
 
 .label {
 	text-align: right;
 	max-width: 250px;
-	padding-right: 5px;
+	padding-right: 15px;
 }
 
 .submit {
